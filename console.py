@@ -17,6 +17,12 @@ class HBNBCommand(cmd.Cmd):
         print()
         return True
 
+    def do_help(self, args):
+        """
+        Gets help for a certain command
+        """
+        cmd.Cmd.do_help(self, args)
+
     def emptyline(self):
         """Do nothing when an empty line is entered"""
         pass
