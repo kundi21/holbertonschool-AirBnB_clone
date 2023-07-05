@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+import cmd
+
 """
 Console for AirBnB Clone.
 """
-import cmd
 
 
 class HBNBCommand(cmd.Cmd):
