@@ -15,3 +15,9 @@ class FileStorage:
 
     def new(self, obj):
         """create object"""
+
+    def save(self):
+        """save object"""
+
+    def reload(self):
+        """reload object"""
