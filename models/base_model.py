@@ -10,23 +10,23 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Initialization (generate id and datetime)"""
-        if kwargs is not None:
-            for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
-                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                if key is not "__class__":
-                    setattr(self, key, value)
-        else:
+        if kwargs is None:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
             storage.new(self)
+        else:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                if key != "__class__":
+                    setattr(self, key, value)
 
-    def update_timestamp(self): 
+    def update_timestamp(self):
         """Update datetime"""
         self.updated_at = datetime.now()
 
-    def __srt__(self):
+    def __str__(self):
         """String representation"""
         return "[{}] ({}) {}".format(
             self.__class__.__name__, self.id, self.__dict__)
