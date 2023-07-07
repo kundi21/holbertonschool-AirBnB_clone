@@ -3,6 +3,8 @@
 Console for AirBnB Clone.
 """
 import cmd
+from models.base_model import BaseModel
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -26,6 +28,33 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Do nothing when an empty line is entered"""
         pass
+
+    def do_create(self, arg):
+        if not arg:
+            print("** class name missing **")
+            return
+        if arg != "BaseModel":
+            print("** class doesn't exist **")
+            return
+        else:
+            model = BaseModel()
+            print(model.id)
+
+    def do_show(self, *args):
+
+        model = BaseModel()
+        if not args:
+            print("** class name missing **")
+            return
+        if args[0] != "BaseModel":
+            print("** class doesn't exist **")
+            return
+        if len(args) == 1:
+            print("** instance id missing **")
+            return
+        if args[1] != model.id:
+            print("** no instance found **")
+            return
 
 
 if __name__ == '__main__':
