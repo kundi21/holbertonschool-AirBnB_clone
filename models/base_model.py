@@ -5,7 +5,7 @@ from datetime import datetime
 from models import storage
 
 
-class BaseModel:
+class BaseModel():
     """Base Model Class"""
 
     def __init__(self, *args, **kwargs):
