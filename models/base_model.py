@@ -5,16 +5,16 @@ from datetime import datetime
 from models import storage
 
 
-class BaseModel:
+class BaseModel():
     """Base Model Class"""
 
     def __init__(self, *args, **kwargs):
         """Initialization (generate id and datetime)"""
-        if kwargs is not None:
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                if key is not "__class__":
+                if key != "__class__":
                     setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
@@ -22,11 +22,11 @@ class BaseModel:
             self.updated_at = self.created_at
             storage.new(self)
 
-    def update_timestamp(self): 
+    def update_timestamp(self):
         """Update datetime"""
         self.updated_at = datetime.now()
 
-    def __srt__(self):
+    def __str__(self):
         """String representation"""
         return "[{}] ({}) {}".format(
             self.__class__.__name__, self.id, self.__dict__)
