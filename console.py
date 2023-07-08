@@ -94,16 +94,20 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
-        """Prints all instances of specified class"""
+        """Prints all instances of specified class or not"""
         if not arg:
             for key in storage.all():
                 print(storage.all()[key])
         else:
-            args = arg.split()
-            for dictClasses in HBNBCommand.classes:
+            classesDictCopy = HBNBCommand.classes[:]
+            for dictClasses in classesDictCopy:
+                args = arg.split()
                 if args[0] == dictClasses:
+                    for key in storage.all():
+                        if key.split('.')[0] == args[0]:
+                            print(storage.all()[key])
                     break
-                else:
+                elif args[0] != dictClasses:
                     print("** class doesn't exist **")
                     return
 
