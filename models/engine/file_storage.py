@@ -34,6 +34,9 @@ class FileStorage:
         """deserializes object from json file"""
         try:
             with open(FileStorage.__file_path, "r") as file:
-                FileStorage.__objects = json.load(file)
+                try:
+                    FileStorage.__objects = json.load(file)
+                except json.JSONDecodeError:
+                    pass
         except FileNotFoundError:
             pass
