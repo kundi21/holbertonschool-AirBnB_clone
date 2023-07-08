@@ -4,6 +4,12 @@ Console for AirBnB Clone.
 """
 import cmd
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models import storage
 
 
@@ -38,15 +44,19 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         args = arg.split()
+        found = False
         for dictClasses in HBNBCommand.classes:
             if args[0] == dictClasses:
+                found = True
                 model = eval(args[0])()
                 print(model.id)
                 model.save()
                 break
             else:
-                print("** class doesn't exist **")
-                return
+                found = False
+        if found is False:
+            print("** class doesn't exist **")
+            return
 
     def do_show(self, arg):
         """Show specified class instance"""
@@ -54,12 +64,16 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         args = arg.split()
+        found = False
         for dictClasses in HBNBCommand.classes:
             if args[0] == dictClasses:
+                found = True
                 break
             else:
-                print("** class doesn't exist **")
-                return
+                found = False
+        if found is False:
+            print("** class doesn't exist **")
+            return
         if len(args) < 2:
             print("** instance id missing **")
             return
@@ -76,12 +90,16 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         args = arg.split()
+        found = False
         for dictClasses in HBNBCommand.classes:
             if args[0] == dictClasses:
+                found = True
                 break
             else:
-                print("** class doesn't exist **")
-                return
+                found = False
+        if found is False:
+            print("** class doesn't exist **")
+            return
         if len(args) < 2:
             print("** instance id missing **")
             return
@@ -100,16 +118,20 @@ class HBNBCommand(cmd.Cmd):
                 print(storage.all()[key])
         else:
             classesDictCopy = HBNBCommand.classes[:]
+            found = False
             for dictClasses in classesDictCopy:
                 args = arg.split()
                 if args[0] == dictClasses:
+                    found = True
                     for key in storage.all():
                         if key.split('.')[0] == args[0]:
                             print(storage.all()[key])
                     break
-                elif args[0] != dictClasses:
-                    print("** class doesn't exist **")
-                    return
+                else:
+                    found = False
+            if found is False:
+                print("** class doesn't exist **")
+                return
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
