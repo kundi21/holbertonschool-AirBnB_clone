@@ -20,9 +20,15 @@ class FileStorage:
         FileStorage.__objects[key] = obj
 
     def save(self):
-        """save object in json format to a file"""
-        with open(FileStorage.__file_path, "w") as file:
-            json.dump(FileStorage.__objects, file) 
+        """serializes object in json format to a file path"""
+        try:
+            with open(FileStorage.__file_path, "w", encoding="utf-8") as file:
+                for key, value in FileStorage.__objects.items():
+                    file.write("{}: {}\n".format(key, value.to_dict()))
+                json.dump(FileStorage.__objects, file)
+                file.close()
+        except TypeError:
+            pass
 
     def reload(self):
         """deserializes object from json file"""
