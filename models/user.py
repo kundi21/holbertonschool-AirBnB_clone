@@ -26,9 +26,7 @@ class User(BaseModel):
         super().__init__(*args, **kwargs)
     
     def to_dict(self):
-        """
-            Return a dictionary representation of a User.
-        """
+        """Return a dictionary representation of a User."""
         return {
             "id": self.id,
             "created_at": self.created_at.isoformat(),

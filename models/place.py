@@ -32,3 +32,28 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
+    def __init__(self, *args, **kwargs):
+        """
+            Constructor
+        """
+        super().__init__(*args, **kwargs)
+
+    def to_dict(self):
+        """Returns a dictionary representation of a Place instance"""
+        return {
+            'id': self.id,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
+            'city_id': self.city_id,
+            'user_id': self.user_id,
+            'name': self.name,
+            'description': self.description,
+            'number_rooms': self.number_rooms,
+            'number_bathrooms': self.number_bathrooms,
+            'max_guest': self.max_guest,
+            'price_by_night': self.price_by_night,
+            'latitude': self.latitude,
+            'longitude': self.longitude,
+            'amenity_ids': self.amenity_ids
+        }

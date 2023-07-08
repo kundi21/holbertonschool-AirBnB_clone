@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""filestore class call"""
+"""filestore class call and storage instance definition"""
 from models.engine.file_storage import FileStorage
 
 
