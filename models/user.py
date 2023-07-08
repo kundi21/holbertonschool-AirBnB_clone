@@ -24,7 +24,7 @@ class User(BaseModel):
             Constructor.
         """
         super().__init__(*args, **kwargs)
-    
+
     def to_dict(self):
         """Return a dictionary representation of a User."""
         return {

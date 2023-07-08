@@ -20,7 +20,7 @@ class City(BaseModel):
             Constructor.
         """
         super().__init__(*args, **kwargs)
-    
+
     def to_dict(self):
         """Returns a dictionary representation of a City instance."""
         return {
