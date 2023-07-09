@@ -4,7 +4,7 @@
 
 # AirBnB clone - The console
 
-![HBnB Console picture](/docs/65f4a1dd9c51265f49d0.png "HBnB Console")
+![HBnB Console picture](/docs/theconsole.png "HBnB Console")
 
 ## Description of the project:
 Welcome to the Airbnb Clone Command Interpreter project! This is the first step in building a cool web application that works just like Airbnb. In this project we've created a command-line interface (CLI) that lets you manage different things in our Airbnb clone, like users, places, states, cities, amenities and reviews.
