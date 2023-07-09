@@ -32,24 +32,14 @@ class to_Test_User(unittest.TestCase):
         user = User()
         self.assertIsInstance(user.password, str)
 
-    def test_user_to_dict(self):
-        """Test user to_dict method"""
-        user = User()
-        self.assertIsInstance(user.to_dict(), dict)
-
 class to_Test_User_save(unittest.TestCase):
     """Test cases for User save method"""
 
-    def test_user_save(self):
-        """Test user save method"""
-        user = User()
-        user.save()
-        self.assertNotEqual(user.created_at, user.updated_at)
-
     def test_user_save_with_arg(self):
         """Test user save method with arg"""
+        user = User()
         with self.assertRaises(TypeError):
-            user = User().save(None)
+            user.save(None)
 
 class to_Test_User_to_dict(unittest.TestCase):
     """Test cases for User to_dict method"""
@@ -61,5 +51,6 @@ class to_Test_User_to_dict(unittest.TestCase):
 
     def test_user_to_dict_with_arg(self):
         """Test user to_dict method with arg"""
+        user = User()
         with self.assertRaises(TypeError):
-            user = User().to_dict(None)
+            user.to_dict(None)

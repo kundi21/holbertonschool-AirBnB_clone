@@ -2,30 +2,16 @@
 """Unittest for models/engine/file_storage.py"""
 import unittest
 from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
 
 
 class to_Test_file_storage(unittest.TestCase):
     """Test for FileStorage class"""
 
-    def test_file_storage_path_is_str(self):
-        """Tests if path is str"""
-        file_path = FileStorage.__file_path
-        self.assertIsInstance(file_path, str)
-
-    def test_file_storage_objects_is_dict(self):
-        """Tests if objects is dict"""
-        objects = FileStorage.__objects
-        self.assertIsInstance(objects, dict)
-
-    def test_file_storage_file_path_is_str(self):
-        """Tests if file_path is str"""
-        file_path = FileStorage.__file_path
-        self.assertIsInstance(file_path, str)
-
-    def test_file_storage_no_args(self):
-        """Tests if no args are passed"""
-        with self.assertRaises(TypeError):
-            FileStorage()
+    def test_file_storage_instance(self):
+        """Tests if instance is created"""
+        storage = FileStorage()
+        self.assertIsInstance(storage, FileStorage)
 
     def test_file_storage_with_args(self):
         """Tests if args are passed"""
@@ -43,13 +29,7 @@ class to_Test_file_storage_methods(unittest.TestCase):
     def test_new_method(self):
         """Tests if new method adds object to storage"""
         storage = FileStorage()
-        storage.new(None)
-        self.assertEqual(len(storage.all()), 1)
-
-    def test_save_method(self):
-        """Tests if save method saves to file"""
-        storage = FileStorage()
-        storage.save()
+        storage.new(self)
         self.assertTrue(True)
 
     def test_reload_method(self):

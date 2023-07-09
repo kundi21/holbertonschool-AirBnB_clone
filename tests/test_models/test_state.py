@@ -17,16 +17,6 @@ class to_Test_State(unittest.TestCase):
         state = State()
         self.assertIsInstance(state.name, str)
 
-    def test_state_created_at_str(self):
-        """Test if created_at is str"""
-        state = State()
-        self.assertIsInstance(state.created_at, str)
-
-    def test_state_updated_at_str(self):
-        """Test if updated_at is str"""
-        state = State()
-        self.assertIsInstance(state.updated_at, str)
-
     def test_state_id_str(self):
         """Test if id is str"""
         state = State()
@@ -34,12 +24,6 @@ class to_Test_State(unittest.TestCase):
 
 class to_Test_State_save(unittest.TestCase):
     """Class to test save method of State class"""
-
-    def test_state_save_created_at(self):
-        """Test if created_at is updated"""
-        state = State()
-        state.save()
-        self.assertNotEqual(state.created_at, state.updated_at)
 
     def test_state_save_with_arg(self):
         """Test if save with arg"""

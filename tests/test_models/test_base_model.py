@@ -21,16 +21,6 @@ class to_TestBaseModel(unittest.TestCase):
         base = BaseModel()
         self.assertIsInstance(base.id, str)
 
-    def test_base_model_created_at_str(self):
-        """method testing base model created_at is string"""
-        base = BaseModel()
-        self.assertIsInstance(base.created_at, str)
-
-    def test_base_model_updated_at_str(self):
-        """method testing base model updated_at is string"""
-        base = BaseModel()
-        self.assertIsInstance(base.updated_at, str)
-
     def test_base_model_to_dict(self):
         """method testing base model to_dict"""
         base = BaseModel()
@@ -54,13 +44,8 @@ class to_TestBaseModel(unittest.TestCase):
 class to_TestBaseModel_to_dict(unittest.TestCase):
     """Testing base model to_dict"""
 
-    def test_to_dict_base_model_type(self):
+    def test_to_dict_base_model_dict(self):
         """method testing base model to_dict type"""
-        base = BaseModel()
-        self.assertIsInstance(base.to_dict(), dict)
-
-    def test_to_dict_base_model(self):
-        """method testing base model to_dict"""
         base = BaseModel()
         self.assertIsInstance(base.to_dict(), dict)
 

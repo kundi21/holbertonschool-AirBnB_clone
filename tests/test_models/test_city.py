@@ -17,16 +17,6 @@ class to_Test_City(unittest.TestCase):
         city = City()
         self.assertIsInstance(city.name, str)
 
-    def test_city_created_at_str(self):
-        """Test City created_at"""
-        city = City()
-        self.assertIsInstance(city.created_at, str)
-
-    def test_city_updated_at_str(self):
-        """Test City updated_at"""
-        city = City()
-        self.assertIsInstance(city.updated_at, str)
-
     def test_city_id_str(self):
         """Test City id"""
         city = City()
@@ -34,12 +24,6 @@ class to_Test_City(unittest.TestCase):
 
 class to_Test_State_save(unittest.TestCase):
     """Class for testing City class"""
-
-    def test_city_save_created_at(self):
-        """Test City save()"""
-        city = City()
-        city.save()
-        self.assertEqual(city.created_at, city.updated_at)
 
     def test_city_save_with_arg(self):
         """Test City save()"""

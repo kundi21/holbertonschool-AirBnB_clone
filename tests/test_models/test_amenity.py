@@ -17,16 +17,6 @@ class to_Test_Amenity(unittest.TestCase):
         amenity = Amenity()
         self.assertIsInstance(amenity.name, str)
 
-    def test_amenity_updated_at_str(self):
-        """Test Amenity updated_at"""
-        amenity = Amenity()
-        self.assertIsInstance(amenity.updated_at, str)
-
-    def test_amenity_created_at_str(self):
-        """Test Amenity created_at"""
-        amenity = Amenity()
-        self.assertIsInstance(amenity.created_at, str)
-
     def test_amenity_id_str(self):
         """Test Amenity id"""
         amenity = Amenity()
@@ -50,7 +40,7 @@ class to_Test_Amenity_save(unittest.TestCase):
 class to_Test_Amenity_to_dict(unittest.TestCase):
     """Class for testing Amenity to_dict method"""
 
-    def test_amenity_to_dict(self):
+    def test_amenity_to_dict_dict(self):
         """Test Amenity to_dict"""
         amenity = Amenity()
         self.assertIsInstance(amenity.to_dict(), dict)

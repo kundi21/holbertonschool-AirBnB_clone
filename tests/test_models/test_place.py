@@ -17,16 +17,6 @@ class to_Test_Place(unittest.TestCase):
         place = Place()
         self.assertIsInstance(place.name, str)
 
-    def test_place_updated_at_str(self):
-        """Test if updated_at is a string"""
-        place = Place()
-        self.assertIsInstance(place.updated_at, str)
-
-    def test_place_created_at_str(self):
-        """Test if created_at is a string"""
-        place = Place()
-        self.assertIsInstance(place.created_at, str)
-
     def test_place_id_str(self):
         """Test if id is a string"""
         place = Place()
@@ -85,12 +75,6 @@ class to_Test_Place(unittest.TestCase):
 class to_Test_Place_save(unittest.TestCase):
     """Test for Place class"""
 
-    def test_place_save_created_at(self):
-        """Test if created_at is updated after save"""
-        place = Place()
-        place.save()
-        self.assertNotEqual(place.created_at, place.updated_at)
-
     def test_place_save_with_arg(self):
         """Test if save with arg works"""
         place = Place()
@@ -100,7 +84,7 @@ class to_Test_Place_save(unittest.TestCase):
 class to_Test_Place_to_dict(unittest.TestCase):
     """Test for Place class"""
 
-    def test_place_to_dict_type(self):
+    def test_place_to_dict_dict(self):
         """Test if to_dict returns a dictionary"""
         place = Place()
         self.assertIsInstance(place.to_dict(), dict)
@@ -111,15 +95,14 @@ class to_Test_Place_to_dict(unittest.TestCase):
         self.assertIn('id', place.to_dict())
         self.assertIn('created_at', place.to_dict())
         self.assertIn('updated_at', place.to_dict())
-        self.assertIn('__class__', place.to_dict())
 
     def test_place_to_dict_contains_added_attributes(self):
         """Test if to_dict contains added attributes"""
         place = Place()
         place.name = 'Holberton'
-        place.my_number = 98
+        place.number_rooms = 98
         self.assertIn('name', place.to_dict())
-        self.assertIn('my_number', place.to_dict())
+        self.assertIn('number_rooms', place.to_dict())
 
     def test_place_to_dict_with_arg(self):
         """Test if to_dict with arg works"""

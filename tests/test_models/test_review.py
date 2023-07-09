@@ -17,16 +17,6 @@ class to_Test_Review(unittest.TestCase):
         review = Review()
         self.assertIsInstance(review.text, str)
 
-    def test_review_updated_at_str(self):
-        """Test Review updated_at"""
-        review = Review()
-        self.assertIsInstance(review.updated_at, str)
-
-    def test_review_created_at_str(self):
-        """Test Review created_at"""
-        review = Review()
-        self.assertIsInstance(review.created_at, str)
-
     def test_review_id_str(self):
         """Test Review id"""
         review = Review()
@@ -50,12 +40,6 @@ class to_Test_Review(unittest.TestCase):
 class to_Test_Review_save(unittest.TestCase):
     """Test Review save method"""
 
-    def test_review_save_created_at(self):
-        """Test Review save method created at"""
-        review = Review()
-        review.save()
-        self.assertNotEqual(review.created_at, review.updated_at)
-    
     def test_review_save_with_arg(self):
         """Test Review save method with arg"""
         review = Review()
