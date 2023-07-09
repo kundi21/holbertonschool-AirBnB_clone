@@ -20,7 +20,7 @@ You can run the command interpreter in interactive mode by executing the console
 You can then type commands, press Enter to execute them and receive the corresponding output. Here's an example:
 
 
-fotito fachera de la consola
+![HBnB Console example](/docs/consoleexample.png "console example")
 
 
 
