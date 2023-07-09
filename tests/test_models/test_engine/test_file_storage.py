@@ -2,7 +2,6 @@
 """Unittest for models/engine/file_storage.py"""
 import unittest
 from models.engine.file_storage import FileStorage
-from models.base_model import BaseModel
 
 
 class to_Test_file_storage(unittest.TestCase):
@@ -17,6 +16,11 @@ class to_Test_file_storage(unittest.TestCase):
         """Tests if args are passed"""
         with self.assertRaises(TypeError):
             FileStorage(None)
+
+    def test_file_storage_with_no_args(self):
+        """Tests if args are passed"""
+        self.assertEqual(FileStorage(), FileStorage())
+
 
 class to_Test_file_storage_methods(unittest.TestCase):
     """Test for FileStorage class"""
