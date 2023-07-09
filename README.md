@@ -14,7 +14,8 @@ Welcome to the Airbnb Clone Command Interpreter project! This is the first step 
 ### Execution
 The shell for the Airbnb Clone Command Interpreter can be used in both interactive and non-interactive modes.
 
-###Interactive Mode
+
+### Interactive Mode
 In interactive mode, you can run the command interpreter by executing the console.py script. Once started, the shell prompt (hbnb) will appear, indicating that you can enter commands. 
 You can then type commands, press Enter to execute them, and receive the corresponding output. Here's an example:
 
@@ -42,3 +43,14 @@ Once the console is running, you can enter commands and receive corresponding ou
 
 "update (class) (id) (attribute name) (attribute value)": Updates a specified class instance.
 
+## Console Examples
+
+fotitos
+
+
+fotitos
+
+
+# AUTHORS
+Facundo Machado - kundi21
+Sebastian Maidana - ELCBAh
