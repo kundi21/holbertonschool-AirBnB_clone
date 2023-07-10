@@ -19,9 +19,7 @@ The shell for the Airbnb Clone Command Interpreter can be used in both interacti
 You can run the command interpreter in interactive mode by executing the console.py script. Once started, the shell prompt (hbnb) will appear, indicating that you can enter commands. 
 You can then type commands, press Enter to execute them and receive the corresponding output. Here's an example:
 
-
 ![HBnB Console example](/docs/consoleexample.png "console example")
-
 
 
 Once the console is running, you can enter commands and receive corresponding outputs. To quit the console, enter the command quit or use the EOF signal (ctrl-D).
@@ -43,12 +41,9 @@ Once the console is running, you can enter commands and receive corresponding ou
 
 "update (class) (id) (attribute name) (attribute value)": Updates a specified class instance.
 
-## Console Examples
+## Console Example
 
-fotitos
-
-
-fotitos
+![HBnB Console example](/docs/exampleconsole.png "console example")
 
 
 # AUTHORS
