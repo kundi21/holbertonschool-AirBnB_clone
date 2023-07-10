@@ -41,10 +41,13 @@ Once the console is running, you can enter commands and receive corresponding ou
 
 "update (class) (id) (attribute name) (attribute value)": Updates a specified class instance.
 
-## Console Example
+## Console Examples
 
+###Example 1 (help, create, show, destroy, all)
 ![HBnB Console example](/docs/exampleconsole.png "console example")
 
+###Example 2 (update)
+![HBnB Console example](/docs/example2.png "console example")
 
 # AUTHORS
 Facundo Machado - kundi21
