@@ -43,10 +43,10 @@ Once the console is running, you can enter commands and receive corresponding ou
 
 ## Console Examples
 
-###Example 1 (help, create, show, destroy, all)
+### Example 1 (help, create, show, destroy, all)
 ![HBnB Console example](/docs/exampleconsole.png "console example")
 
-###Example 2 (update)
+### Example 2 (update)
 ![HBnB Console example](/docs/example2.png "console example")
 
 # AUTHORS
